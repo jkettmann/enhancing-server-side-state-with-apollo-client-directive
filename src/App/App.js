@@ -3,6 +3,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import resolvers from './resolvers';
 import BookList from '../BookList';
+import UnselectAllBooksButton from '../UnselectAllBooksButton';
 import './App.css';
 
 const client = new ApolloClient({
@@ -14,6 +15,8 @@ const App = () => (
   <ApolloProvider client={client}>
     <div className='App'>
       <BookList />
+
+      <UnselectAllBooksButton />
     </div>
   </ApolloProvider>
 );

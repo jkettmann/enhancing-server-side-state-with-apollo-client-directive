@@ -17,6 +17,25 @@ const resolvers = {
       cache.writeFragment({ fragment, id, data });
       return null;
     },
+    unselectAllBooks: (_, args, { cache }) => {
+      const query = gql`
+        query {
+          books {
+            id
+            selected
+          }
+        }
+      `;
+
+      const previous = cache.readQuery({ query });
+      const books = previous.books.map(book => ({
+        ...book,
+        selected: false,
+      }));
+
+      cache.writeQuery({ query, data: { books } });
+      return null;
+    }
   },
 };
 
