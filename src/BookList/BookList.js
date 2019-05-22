@@ -9,6 +9,7 @@ const BOOKS_QUERY = gql`
       id
       author
       title
+      selected @client
     }
   }
 `;
