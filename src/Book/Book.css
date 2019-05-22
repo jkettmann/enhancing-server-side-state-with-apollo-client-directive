@@ -1,0 +1,9 @@
+.selected {
+  color: red;
+  cursor: pointer;
+}
+
+.not-selected {
+  color: black;
+  cursor: pointer;
+}
